@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Header from './components/Header';
 //disini nanti return 3 buah komponen 
 //1. Header
 //2. Catatan Aktif 
@@ -7,9 +7,10 @@ import React from 'react';
 class Dashboard extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Dashboard</h1>
-      </div>
+      <>
+        <Header/>
+      </>
+ 
     );
   }
 }
