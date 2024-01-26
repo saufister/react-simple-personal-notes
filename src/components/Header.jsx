@@ -4,7 +4,7 @@ function Header({ onCari }) {
   return (
     <div className="note-app__header">
       <h1>Notes</h1>
-      <Pencarian />
+      <Pencarian onCari={onCari} />
     </div>
   );
 }
