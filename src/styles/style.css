@@ -55,6 +55,8 @@ input::placeholder, textarea::placeholder {
   margin: 0 auto;
   max-width: 500px;
   margin-bottom: 48px;
+  /* //background-color: #b00020; */
+  border-radius: 30px;
 }
 
 .note-input input, .note-input textarea {

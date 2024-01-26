@@ -1,8 +1,8 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import Dashboard from './Dashboard.jsx';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import NotedApps from "./NotesApp.jsx";
 // import style
-import './styles/style.css';
+import "./styles/style.css";
 
-const root = createRoot(document.getElementById('root'));
-root.render(<Dashboard/>);
+const root = createRoot(document.getElementById("root"));
+root.render(<NotedApps />);
