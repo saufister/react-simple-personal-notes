@@ -1,42 +1,31 @@
 import React from "react";
 
-// class MyFormInput extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       value: "",
-//     };
-//   }
-//   render() {
-//     return (
-//       <div className="note-input">
-//         <h1 className="note-input__title">Buat Catatan!</h1>
-//         <form className="note-input__body">
-//           <input className="input" type="text" placeholder="Judul" />
-//           <textarea
-//             className="note-input__textarea"
-//             placeholder="Catatan"
-//           ></textarea>
-//           <button className="note-input__button">Tambah Catatan</button>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
-function MyFormInput({ onTambahCatatan }) {
+const MyFormInput = ({ title, body, onSubmit, onInputChange }) => {
   return (
-    <div className="note-input">
-      <h1 className="note-input__title">Buat Catatan!</h1>
-      <form className="note-input__body" onSubmit={onTambahCatatan}>
-        <input className="input" type="text" placeholder="Judul" />
-        <textarea
-          className="note-input__textarea"
-          placeholder="Catatan"
-        ></textarea>
-        <button className="note-input__button">Tambah Catatan</button>
-      </form>
+    <div className="note-input__body">
+      <div className="note-input">
+        <h1 className="note-input__title">Buat Catatan!</h1>
+        <form className="note-input__body" onSubmit={onSubmit}>
+          <input
+            className="input"
+            type="text"
+            name="title"
+            placeholder="Judul"
+            value={title}
+            onChange={onInputChange}
+          />
+          <textarea
+            className="note-input__textarea"
+            name="body"
+            placeholder="Catatan"
+            value={body}
+            onChange={onInputChange}
+          ></textarea>
+          <button className="note-input__button">Tambah Catatan</button>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
 export default MyFormInput;
