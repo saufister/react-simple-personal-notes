@@ -128,6 +128,7 @@ class NotedApps extends React.Component {
 
   handleInputChange(event) {
     const { name, value } = event.target;
+    console.log(event.target.name);
     this.setState({ [name]: value });
 
     if (name === "body") {
@@ -140,11 +141,12 @@ class NotedApps extends React.Component {
           characterCount: prevState.characterCount + value.length,
         }));
       }
+      this.setState({
+        [name]: value,
+        characterCount: value.length,
+      });
     }
-    this.setState({
-      [name]: value,
-      characterCount: value.length,
-    });
+
     //console.log(this.state.characterCount);
   }
 
