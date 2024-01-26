@@ -1,25 +1,37 @@
 import React from "react";
-
-function ListNotesAktif({ notes }) {
+import Notes from "./NotesComponent.jsx";
+import { showFormattedDate } from "../utils/index.js";
+function ListNotesAktif({ notes, onArchive, onDelete }) {
   //tampilkan daftar noted disini dengan loops
   //gunakan map
+  if (!notes || notes.length === 0) {
+    return (
+      <>
+        <h2>Daftar Catatan Aktif</h2>
+        <p className=".notes-list__empty-message">Tidak ada catatan</p>
+      </>
+    );
+  }
   return (
-    <div>
+    <>
       <h2>Daftar Catatan Aktif</h2>
-    </div>
+
+      <div className="notes-list">
+        {notes.map((note) => (
+          <Notes
+            key={note.id}
+            title={note.title}
+            tanggal={showFormattedDate(note.createdAt)}
+            body={note.body}
+            archived={note.archived}
+            onArchive={onArchive}
+            noteId={note.id}
+            onDelete={onDelete}
+          />
+        ))}
+        ;
+      </div>
+    </>
   );
-  // return (
-  //     <div className="notes-list">
-  //         <h2>Catatan Aktif</h2>
-  //         <ul>
-  //             {notes.map((note) => (
-  //                 <li key={note.id}>
-  //                     <h3>{note.title}</h3>
-  //                     <p>{note.body}</p>
-  //                 </li>
-  //             ))}
-  //         </ul>
-  //     </div>
-  // )
 }
 export default ListNotesAktif;
